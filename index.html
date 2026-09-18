@@ -48,19 +48,18 @@ h1{margin:0;font-size:15px}
 <script>
 const H={lat:40.9610433,lon:-5.661391,name:"Eurostars Las Claras",addr:"C/ Marquesa de Almarza, s/n, 37001 Salamanca"};
 const GREEN=["Huertas de la Trinidad","De las Huertas","Cordel de Merinas","Jardines","Bailén","Ballesta","Plaza de la Fontana","Av. Reyes de España","Paseo Rector Esperabé (pares)","San Gregorio","Santa Brígida"];
+const ORA=PLACEHOLDER_ORA;
 const map=L.map("map",{zoomControl:false}).setView([H.lat,H.lon],16);
 L.control.zoom({position:"bottomright"}).addTo(map);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OSM · ORA Ayto. Salamanca"}).addTo(map);
 function st(f){const n=((f.properties&&f.properties.name)||"").toUpperCase();const a=n.includes("A");return{color:a?"#16a34a":"#2563eb",weight:1.5,fillColor:a?"#22c55e":"#3b82f6",fillOpacity:.28};}
 L.marker([H.lat,H.lon],{icon:L.divIcon({className:"",html:'<div style="width:18px;height:18px;border-radius:50%;background:#dc2626;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35)"></div>',iconSize:[18,18],iconAnchor:[9,9]})}).addTo(map)
   .bindPopup(`<strong>${H.name}</strong><br>${H.addr}<br><em>Verde ≈ 5 h · Azul ≈ 2 h</em>`);
+L.geoJSON(ORA,{style:st,onEachFeature:(f,l)=>{const p=f.properties||{};l.bindPopup(`<strong>${p.name||"Zona ORA"}</strong><br>${p.nplazas!=null?p.nplazas+" plazas":""}`);}}).addTo(map);
 document.getElementById("streets").innerHTML='<span class="chip h">Hotel</span>'+GREEN.map(s=>`<span class="chip g">${s}</span>`).join("");
 document.getElementById("note").textContent="El GeoJSON oficial NO distingue verde vs azul: solo Zona A / Zona B. Las calles verdes son orientación práctica; confirma señalización. Fuente: opendata/IDE Ayto. Salamanca.";
 document.getElementById("rec").onclick=()=>map.setView([H.lat,H.lon],16);
 document.getElementById("go").href=`https://www.google.com/maps/dir/?api=1&destination=${H.lat},${H.lon}&travelmode=driving`;
-fetch("zona.json").then(r=>r.json()).then(ORA=>{
-  L.geoJSON(ORA,{style:st,onEachFeature:(f,l)=>{const p=f.properties||{};l.bindPopup(`<strong>${p.name||"Zona ORA"}</strong><br>${p.nplazas!=null?p.nplazas+" plazas":""}`);}}).addTo(map);
-}).catch(e=>{document.getElementById("note").textContent+=" (No se pudo cargar zona.json: "+e+")";});
 </script>
 </body>
 </html>

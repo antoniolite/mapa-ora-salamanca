@@ -1,13 +1,13 @@
-# Mapa ORA Salamanca (Eurostars Las Claras)
+# Mapa ORA Salamanca (móvil)
 
-Mapa móvil Leaflet centrado en el hotel, con capas oficiales **Zona A / Zona B**.
+Hotel **Eurostars Las Claras** + zonas ORA A/B (datos oficiales Ayto. Salamanca).
 
-## Enlace móvil
-https://cdn.jsdelivr.net/gh/antoniolite/mapa-ora-salamanca@main/index.html
+## Abrir el mapa (recomendado)
 
-## Importante
-El GeoJSON oficial **no distingue plazas verdes vs azules** (solo Zona A/B).
+**GitHub Pages** (cuando esté activo): https://antoniolite.github.io/mapa-ora-salamanca/
 
-Archivos: `index.html` + `zona.json`
+**Vista previa HTML** (funciona ya): https://htmlpreview.github.io/?https://raw.githubusercontent.com/antoniolite/mapa-ora-salamanca/main/index.html
 
-Fuente: https://opendata.aytosalamanca.es/datosabiertos/catalogo/dataset/zona-ora
+> jsDelivr sirve este HTML como `text/plain`, por eso en el móvil se ve el código fuente. No uses ese CDN para abrir el mapa.
+
+Archivo autocontenido: `index.html` (zonas embebidas; no necesita `zona.json` para pintar).
