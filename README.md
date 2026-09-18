@@ -2,12 +2,14 @@
 
 Hotel **Eurostars Las Claras** + zonas ORA A/B (datos oficiales Ayto. Salamanca).
 
-## Abrir el mapa (recomendado)
+## Abrir el mapa
 
-**GitHub Pages** (cuando esté activo): https://antoniolite.github.io/mapa-ora-salamanca/
+**Vista previa (abre como página, no como código):**
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/antoniolite/mapa-ora-salamanca/main/index.html
 
-**Vista previa HTML** (funciona ya): https://htmlpreview.github.io/?https://raw.githubusercontent.com/antoniolite/mapa-ora-salamanca/main/index.html
+**GitHub Pages** (si lo activas en Settings → Pages → Deploy from branch `main` / root):
+https://antoniolite.github.io/mapa-ora-salamanca/
 
-> jsDelivr sirve este HTML como `text/plain`, por eso en el móvil se ve el código fuente. No uses ese CDN para abrir el mapa.
+> No uses jsDelivr: sirve el HTML como `text/plain` y en el móvil se ve el código fuente.
 
-Archivo autocontenido: `index.html` (zonas embebidas; no necesita `zona.json` para pintar).
+`index.html` es autocontenido (zonas embebidas).
