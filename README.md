@@ -11,4 +11,8 @@ Abre `index.html` en el móvil (Safari/Chrome). Necesita red para teselas OSM.
 
 Fuente: https://opendata.aytosalamanca.es/datosabiertos/catalogo/dataset/zona-ora
 
+
+## Enlace móvil
 https://cdn.jsdelivr.net/gh/antoniolite/mapa-ora-salamanca@main/index.html
+
+Repo: https://github.com/antoniolite/mapa-ora-salamanca
